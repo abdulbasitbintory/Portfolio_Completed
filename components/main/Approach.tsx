@@ -40,7 +40,7 @@ const Approach = () => {
           />
         </Card>
         <Card
-          title=" Agile Development & Implementation "
+          title="Agile Development & Implementation"
           icon={<AceternityIcon order="Phase 2" />}
           des="I build the software using modern development practices. 
           I write clean, well-structured code, often using version control 
@@ -81,17 +81,14 @@ const Approach = () => {
 
 export default Approach;
 
-const Card = ({
-  title,
-  icon,
-  children,
-  des,
-}: {
+interface CardProps {
   title: string;
   icon: React.ReactNode;
   children?: React.ReactNode;
   des: string;
-}) => {
+}
+
+const Card = ({ title, icon, children, des }: CardProps) => {
   const [hovered, setHovered] = React.useState(false);
   return (
     <div
@@ -168,7 +165,7 @@ const AceternityIcon = ({ order }: { order: string }) => {
   );
 };
 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({ className, ...rest }: { className: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,12 +1,10 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { cn } from "@/utils/cn";
+import { cn } from "@/utils/cn"; // Ensure this path is correct for your project
 
 export const PinContainer = ({
   children,
-  title,
-  href,
   className,
   containerClassName,
   intensity = 20,
@@ -16,8 +14,8 @@ export const PinContainer = ({
   glareMaxOpacity = 0.7,
 }: {
   children: React.ReactNode;
-  title?: string;
-  href?: string;
+  // title?: string;  // Removed unused prop
+  // href?: string;   // Removed unused prop
   className?: string;
   containerClassName?: string;
   intensity?: number;
@@ -29,10 +27,10 @@ export const PinContainer = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  
+
   const xSpring = useSpring(x, { damping: 50, stiffness: 400 });
   const ySpring = useSpring(y, { damping: 50, stiffness: 400 });
-  
+
   const rotateX = useTransform(
     ySpring,
     [-1, 1],
@@ -46,17 +44,17 @@ export const PinContainer = ({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
-    
+
     const rect = containerRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    
+
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-    
+
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
-    
+
     x.set(xPct * intensity);
     y.set(yPct * intensity);
   };
@@ -104,55 +102,27 @@ export const PinContainer = ({
               className="absolute inset-0 pointer-events-none opacity-0 group-hover/pin:opacity-100 transition-opacity duration-300"
             />
           )}
-          
+
           {/* Gradient border */}
           <div className="absolute inset-0 rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-purple-500/10 to-cyan-500/10 opacity-0 group-hover/pin:opacity-100 transition-opacity duration-500"></div>
           </div>
-          
+
           {/* Inner content */}
           <div className="relative z-10 w-full h-full">
             {children}
           </div>
         </motion.div>
       </div>
-      <PinPerspective title={title} href={href} />
+      <PinPerspective /* title={title} href={href} */ />
     </div>
   );
 };
 
-export const PinPerspective = ({
-  title,
-  href,
-}: {
-  title?: string;
-  href?: string;
-}) => {
+export const PinPerspective = () => { // Removed unused props
   return (
     <motion.div className="pointer-events-none w-full h-80 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 z-[60] transition duration-500">
       <div className="w-full h-full -mt-7 flex-none inset-0">
-        {/* <div className="absolute top-0 inset-x-0 flex justify-center">
-          {href ? (
-            <a
-              href={href}
-              target={"_blank"}
-              rel="noopener noreferrer"
-              className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 hover:ring-purple-500/50 transition-all"
-            >
-              <span className="relative z-20 text-white text-xs font-bold inline-block py-0.5">
-                {title || "View Project"}
-              </span>
-              <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-purple-500/90 to-cyan-400/0 transition-opacity duration-500 group-hover/btn:opacity-40"></span>
-            </a>
-          ) : (
-            <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10">
-              <span className="relative z-20 text-white text-xs font-bold inline-block py-0.5">
-                {title || "Interactive"}
-              </span>
-            </div>
-          )}
-        </div> */}
-
         <div
           style={{
             perspective: "1000px",

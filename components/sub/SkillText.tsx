@@ -1,8 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { slideInFromTop, fadeIn } from "@/utils/motion";
-import { FaCode, FaServer, FaPaintBrush, FaRobot, FaLaptopCode, FaHackerNews } from "react-icons/fa";
+import { FaCode, FaServer, FaRobot, FaLaptopCode } from "react-icons/fa";
 import { FaArrowsToCircle } from "react-icons/fa6";
 
 const SkillText = () => {

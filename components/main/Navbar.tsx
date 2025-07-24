@@ -1,7 +1,7 @@
 "use client";
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React, { useState, useEffect, use } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -74,10 +74,10 @@ const Navbar = () => {
         {/* Social Icons */}
         <div className="hidden md:flex items-center gap-4">
           {Socials.map((social) => (
-            <a 
-              key={social.name} 
-              href={social.url} 
-              target="_blank" 
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-[#030014]/50 border border-[#7042f861] hover:bg-purple-500/20 transition-all duration-300"
             >
@@ -93,7 +93,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -108,9 +108,9 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <motion.div
         initial={{ height: 0, opacity: 0 }}
-        animate={{ 
-          height: isMenuOpen ? 'auto' : 0, 
-          opacity: isMenuOpen ? 1 : 0 
+        animate={{
+          height: isMenuOpen ? 'auto' : 0,
+          opacity: isMenuOpen ? 1 : 0,
         }}
         transition={{ duration: 0.3 }}
         className={`md:hidden absolute top-full left-0 w-full bg-[#030014]/95 backdrop-blur-lg overflow-hidden ${isMenuOpen ? 'py-4' : ''}`}
@@ -128,10 +128,10 @@ const Navbar = () => {
           ))}
           <div className="flex items-center gap-4 mt-4">
             {Socials.map((social) => (
-              <a 
-                key={social.name} 
-                href={social.url} 
-                target="_blank" 
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-[#030014]/50 border border-[#7042f861] hover:bg-purple-500/20 transition-all duration-300"
               >

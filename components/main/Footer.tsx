@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaRocket, FaArrowUp } from "react-icons/fa";
 import { Socials } from "@/constants";
+import Image from "next/image";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +26,7 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -34,7 +35,7 @@ const Footer = () => {
       className="relative w-full pt-20 pb-10 overflow-hidden border-t border-gray-800/50"
       id="contact"
       style={{
-        background: "radial-gradient(ellipse at top, rgba(56, 2, 155, 0.2) 0%, rgba(7, 0, 20, 0.8) 70%)"
+        background: "radial-gradient(ellipse at top, rgba(56, 2, 155, 0.2) 0%, rgba(7, 0, 20, 0.8) 70%)",
       }}
     >
       <div className="absolute inset-0 -z-10">
@@ -192,7 +193,7 @@ const Footer = () => {
                       whileTap={{ scale: 0.9 }}
                       className="w-12 h-12 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg bg-gray-900/50 rounded-xl border border-gray-700 hover:border-purple-500 transition-all shadow-lg"
                     >
-                      <img
+                      <Image
                         src={social.src}
                         alt={social.name}
                         width={24}
@@ -230,7 +231,7 @@ const Footer = () => {
         >
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-              <img
+              <Image
                 src="/coding.svg"
                 alt="Logo"
                 width={40}
@@ -266,7 +267,6 @@ const Footer = () => {
         transition={{ delay: 1, duration: 0.8 }}
         className="absolute bottom-10 right-10 hidden lg:block"
       >
-
       </motion.div>
     </footer>
   );
