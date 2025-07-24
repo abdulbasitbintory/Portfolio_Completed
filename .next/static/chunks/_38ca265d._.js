@@ -448,7 +448,7 @@ const Approach = ()=>{
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$4$2e$2_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 className: "text-base sm:text-lg text-center text-gray-400 max-w-2xl mx-auto px-2 mb-10 sm:mb-12 md:mb-16",
-                children: "As a passionate software engineering student, my approach combines academic learning with hands-on development. I'm dedicated to building robust and scalable applications, constantly exploring new technologies and refining my problem-solving skills to create efficient and innovative software solutions."
+                children: "As a passionate software engineering student, my approach combines academic learning with hands-on development. I am dedicated to building robust and scalable applications, constantly exploring new technologies and refining my problem-solving skills to create efficient and innovative software solutions."
             }, void 0, false, {
                 fileName: "[project]/components/main/Approach.tsx",
                 lineNumber: 22,

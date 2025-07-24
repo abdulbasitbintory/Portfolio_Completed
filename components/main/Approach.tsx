@@ -21,7 +21,7 @@ const Approach = () => {
       </div>
       <p className="text-base sm:text-lg text-center text-gray-400 max-w-2xl mx-auto px-2 mb-10 sm:mb-12 md:mb-16">
         As a passionate software engineering student, my approach combines academic
-        learning with hands-on development. I'm dedicated to building robust and
+        learning with hands-on development. I am dedicated to building robust and
         scalable applications, constantly exploring new technologies and refining
         my problem-solving skills to create efficient and innovative software solutions.
       </p>
